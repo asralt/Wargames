@@ -1,0 +1,5 @@
+# Nmap 7.94 scan initiated Mon Mar 17 21:18:34 2025 as: nmap -sn -oG live_hosts.txt 192.168.1.0/24
+Host: 192.168.1.2 ()	Status: Up
+Host: 192.168.1.6 ()	Status: Up
+Host: 192.168.1.254 (MyRouter)	Status: Up
+# Nmap done at Mon Mar 17 21:19:07 2025 -- 256 IP addresses (3 hosts up) scanned in 32.43 seconds

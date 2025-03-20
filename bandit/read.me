@@ -1,0 +1,76 @@
+# bandit1->.         ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+# bandit 2-> 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+# bandit3-> MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+# bandit4->2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+# bandit5-> 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+# bandit6			HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+# banit 7 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+# bandit 8   dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+# bandit 9 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+# banidt  10 FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+# bandit 11 dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+#
+# 
+#  banidit 11 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+# bandit 12   FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+# banid 13 sshkey.private stored in the /
+# bandit14 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+# bandit15 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx  ///////////////////// openssl s_client -connect localhost:31790 -quiet
+
+bandit 16  = private.key
+bandit17 = x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+bandit18 =cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
+bandit19= 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+bandit20 = EeoULMCra2q0dSkYj561DX7s1CpBuOBt
+bandit21 = tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
+bandit22 = 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
+bandit23 = gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
+bandit24= iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
+
+
+
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bandit17@bandit:~$ diff passwords.new passwords.old
+42c42
+< x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
+---
+> ktfgBvpMzWKR5ENj26IbLGSblgUG9CzB
+
+echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | openssl s_client -connect localost:31790
+echo "cluFn7wTiGryunymYOu4RcffSxQluehd" | openssl s_client -connect localhost:31790
+
+
+
+
+31046/tcp open  echo
+31518/tcp open  ssl/echo
+31691/tcp open  echo
+31790/tcp open  ssl/unknown
+31960/tcp open  echo

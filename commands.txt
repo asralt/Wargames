@@ -1,0 +1,119 @@
+Linux Commands Explanation
+==========================
+
+1. grep (Search for Patterns in Files)
+--------------------------------------
+- `grep` searches for a specific pattern in a file.
+- Example:
+  grep "password" data.txt
+  (Searches for the word "password" in data.txt)
+
+2. sort (Sort Lines in a File)
+------------------------------
+- `sort` arranges lines in alphabetical or numerical order.
+- Example:
+  sort names.txt
+  (Sorts the lines in names.txt alphabetically)
+
+3. uniq (Remove Duplicate Lines)
+---------------------------------
+- `uniq` filters out consecutive duplicate lines.
+- Example:
+  sort data.txt | uniq
+  (Sorts data.txt and removes duplicate lines)
+
+4. strings (Extract Readable Text from Binary Files)
+-----------------------------------------------------
+- `strings` finds human-readable text inside binary files.
+- Example:
+  strings binaryfile
+  (Extracts printable text from binaryfile)
+
+5. base64 (Encode or Decode Base64 Data)
+----------------------------------------
+- `base64` is used to encode or decode files.
+- Encode example:
+  base64 file.txt > encoded.txt
+  (Encodes file.txt into encoded.txt)
+- Decode example:
+  base64 -d encoded.txt > decoded.txt
+  (Decodes encoded.txt into decoded.txt)
+
+6. tr (Translate or Replace Characters)
+---------------------------------------
+- `tr` modifies characters in input.
+- Example (convert lowercase to uppercase):
+  cat file.txt | tr 'a-z' 'A-Z'
+  (Converts all lowercase letters in file.txt to uppercase)
+
+7. tar (Archive and Extract Files)
+----------------------------------
+- `tar` creates or extracts .tar archives.
+- Extract files:
+  tar -xvf archive.tar
+  (Extracts files from archive.tar)
+- Create an archive:
+  tar -cvf archive.tar file1 file2
+  (Creates archive.tar from file1 and file2)
+
+8. gzip (Compress Files using Gzip)
+-----------------------------------
+- `gzip` reduces file size.
+- Compress:
+  gzip file.txt
+  (Creates file.txt.gz)
+- Decompress:
+  gunzip file.txt.gz
+  (Extracts file.txt.gz back to file.txt)
+c
+9. bzip2 (Compress Files using Bzip2)
+-------------------------------------
+- `bzip2` is another compression tool.
+- Compress:
+  bzip2 file.txt
+  (Creates file.txt.bz2)
+- Decompress:
+  bzip2 -d file.txt.bz2
+  (Extracts file.txt.bz2 back to file.txt)
+
+10. xxd (Hex Dump and Reverse)
+------------------------------
+- `xxd` converts binary to hex format.
+- Create a hex dump:
+  xxd file.bin
+  (Creates a hexadecimal representation of file.bin)
+- Reverse hex back to binary:
+  xxd -r hexfile > binaryfile
+  (Converts hexfile back to binary format)
+
+11. mkdir (Create a Directory)
+------------------------------
+- `mkdir` creates new folders.
+- Example:
+  mkdir my_folder
+  (Creates a directory named my_folder)
+
+12. cp (Copy Files and Directories)
+-----------------------------------
+- `cp` copies files or directories.
+- Example:
+  cp file1.txt file2.txt
+  (Copies file1.txt to file2.txt)
+
+13. mv (Move or Rename Files)
+-----------------------------
+- Move file:
+  mv file.txt /tmp/
+  (Moves file.txt to the /tmp directory)
+- Rename file:
+  mv oldname.txt newname.txt
+  (Renames oldname.txt to newname.txt)
+
+14. file (Check File Type)
+--------------------------
+- `file` identifies file types.
+- Example:
+  file data.txt
+  (Shows the file type of data.txt)
+- Example output:
+  data.txt: ASCII text
