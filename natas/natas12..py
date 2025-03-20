@@ -1,39 +1,36 @@
-import base64
-import json
-import urllib.parse  # For URL decoding
+# import base64
+# import json
+# import urllib.parse  
 
-def xor_encrypt_decrypt(input_text, key):
-    """ XOR encrypts or decrypts the input_text using the key """
-    return bytes([input_text[i] ^ key[i % len(key)] for i in range(len(input_text))])
 
-# The known plaintext (original JSON before encryption)
-plaintext = json.dumps({"showpassword": "no", "bgcolor": "#ffffff"}).encode()
+# def xor_encrypt_decrypt(input_text, key):
+#     """ XOR encrypts or decrypts the input_text using the key """
+#     return bytes([input_text[i] ^ key[i % len(key)] for i in range(len(input_text))])
 
-# The encrypted base64 cookie value (grab this from your browser)
-encoded_cookie = "HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GARUuXXNmTRg%3D"
+# plaintext = json.dumps({"showpassword": "no", "bgcolor": "#ffffff"}).encode()
 
-# Fix URL-encoded characters
-encoded_cookie = urllib.parse.unquote(encoded_cookie)  # Convert %3D back to '='
+# encoded_cookie = "HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GARUuXXNmTRg%3D"
 
-# Decode from Base64
-decoded_cookie = base64.b64decode(encoded_cookie)
+# encoded_cookie = urllib.parse.unquote(encoded_cookie)  # Convert %3D back to '='
 
-# Find the XOR key by XORing the known plaintext with the decoded cookie
-key = xor_encrypt_decrypt(decoded_cookie, plaintext)
-key = key[:4]  # Extract the repeating key
+# decoded_cookie = base64.b64decode(encoded_cookie)
 
-print(f"Extracted Key: {key.decode()}")  # Convert to string for display
+# key = xor_encrypt_decrypt(decoded_cookie, plaintext)
+# key = key[:4]  # Extract the repeating key
 
-# Now, modify the data to show the password
-modified_data = json.dumps({"showpassword": "yes", "bgcolor": "#ffffff"}).encode()
+# print(f"Extracted Key: {key.decode()}")  # Convert to string for display
 
-# Encrypt using the extracted key
-encrypted_modified = xor_encrypt_decrypt(modified_data, key)
+# # Now, modify the data to show the password
+# modified_data = json.dumps({"showpassword": "yes", "bgcolor": "#ffffff"}).encode()
 
-# Encode to base64
-new_cookie = base64.b64encode(encrypted_modified).decode()
+# # Encrypt using the extracted key
+# encrypted_modified = xor_encrypt_decrypt(modified_data, key)
 
-print(f"Modified Cookie: {new_cookie}")
+# # Encode to base64
+# new_cookie = base64.b64encode(encrypted_modified).decode()
 
-# Use this new cookie in your browser's console:
-# document.cookie = "data=<new_cookie_value>";
+# print(f"Modified Cookie: {new_cookie}")
+
+# # Use this new cookie in your browser's console:
+# # document.cookie = "data=<new_cookie_value>";
+
